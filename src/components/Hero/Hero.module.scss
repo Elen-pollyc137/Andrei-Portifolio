@@ -1,0 +1,159 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+
+.hero {
+  position: relative;
+  padding-block: clamp(3.5rem, 10vw, 6rem) clamp(3rem, 8vw, 5rem);
+  background:
+    radial-gradient(ellipse at top right, rgba(217, 119, 6, 0.14), transparent 55%),
+    var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.inner {
+  @include m.container;
+  display: grid;
+  gap: clamp(2.25rem, 6vw, 3.5rem);
+
+  @include m.respond(lg) {
+    grid-template-columns: 1.35fr 0.9fr;
+    align-items: center;
+  }
+}
+
+.content {
+  order: 2;
+
+  @include m.respond(lg) {
+    order: 1;
+  }
+}
+
+.eyebrow {
+  @include m.eyebrow;
+  display: inline-block;
+  margin-bottom: 1.25rem;
+}
+
+.name {
+  font-size: clamp(2.1rem, 5.5vw, 3.4rem);
+  color: var(--text-primary);
+  max-width: 16ch;
+}
+
+.role {
+  margin-top: 1rem;
+  max-width: 46ch;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.contactRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.contactItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: v.$font-mono;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  transition: color v.$transition-base;
+
+  &:hover {
+    color: var(--accent);
+  }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.primaryCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: v.$radius-sm;
+  transition:
+    filter v.$transition-base,
+    transform v.$transition-base;
+
+  &:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+  }
+}
+
+.secondaryCta {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: v.$radius-sm;
+  border: 1px solid var(--border-strong);
+  color: var(--text-primary);
+  transition:
+    border-color v.$transition-base,
+    background v.$transition-base;
+
+  &:hover {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+}
+
+.media {
+  order: 1;
+  display: flex;
+  justify-content: center;
+
+  @include m.respond(lg) {
+    order: 2;
+    justify-content: flex-end;
+  }
+}
+
+.photoFrame {
+  position: relative;
+  width: clamp(160px, 42vw, 280px);
+  aspect-ratio: 1;
+}
+
+.photoGlow {
+  position: absolute;
+  inset: -14%;
+  background: radial-gradient(circle, rgba(217, 119, 6, 0.35), transparent 70%);
+  filter: blur(24px);
+  z-index: 0;
+}
+
+.photoInner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: v.$radius-lg;
+  border: 1px solid var(--border-strong);
+  box-shadow: v.$shadow-lg;
+  background: var(--bg-elevated);
+}
+
+.photoImage {
+  object-fit: cover;
+  object-position: top center;
+}

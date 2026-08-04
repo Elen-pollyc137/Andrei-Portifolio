@@ -1,0 +1,88 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+
+.section {
+  @include m.section-padding;
+}
+
+.inner {
+  @include m.container;
+  text-align: center;
+  max-width: 780px;
+}
+
+.eyebrow {
+  @include m.eyebrow;
+}
+
+.title {
+  margin-top: 0.9rem;
+  font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+  color: var(--text-primary);
+}
+
+.channels {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2.5rem;
+
+  @include m.respond(sm) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.channel {
+  @include m.card;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1.1rem;
+  text-align: left;
+  color: var(--accent);
+  transition:
+    border-color v.$transition-base,
+    background v.$transition-base;
+
+  &:is(a):hover {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+}
+
+.channelLabel {
+  display: block;
+  font-family: v.$font-mono;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.channelValue {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  word-break: break-word;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.9rem 1.75rem;
+  border-radius: v.$radius-sm;
+  transition:
+    filter v.$transition-base,
+    transform v.$transition-base;
+
+  &:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+  }
+}

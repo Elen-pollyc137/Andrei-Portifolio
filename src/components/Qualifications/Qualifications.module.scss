@@ -1,0 +1,116 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+
+.section {
+  @include m.section-padding;
+  background: var(--bg-elevated);
+  border-block: 1px solid var(--border);
+}
+
+.inner {
+  @include m.container;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+
+  @include m.respond(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  @include m.card;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+}
+
+.cardIcon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: v.$radius-sm;
+  background: var(--accent-soft);
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.eduList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.eduItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--border);
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+.eduLabel {
+  font-family: v.$font-mono;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.eduValue {
+  font-size: 0.92rem;
+  color: var(--text-primary);
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.tag {
+  font-size: 0.82rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: var(--surface-light);
+  color: var(--text-on-light);
+  font-weight: 500;
+}
+
+.langList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.langItem {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+}
+
+.langLevel {
+  font-family: v.$font-mono;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}

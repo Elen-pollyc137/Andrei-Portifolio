@@ -1,0 +1,60 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+}
+
+.backdropImage {
+  object-fit: cover;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.82);
+}
+
+.inner {
+  position: relative;
+  @include m.container;
+  @include m.section-padding;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+
+  @include m.respond(md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-radius: v.$radius-md;
+  border: 1px solid var(--border);
+  background: rgba(31, 41, 55, 0.55);
+  backdrop-filter: blur(6px);
+}
+
+.statValue {
+  font-family: v.$font-mono;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.statLabel {
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}

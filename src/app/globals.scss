@@ -1,0 +1,70 @@
+@use "../styles/variables" as v;
+
+:root {
+  --bg: #{v.$color-bg};
+  --bg-elevated: #{v.$color-ink};
+  --bg-elevated-hover: #232e42;
+  --text-primary: #{v.$color-platinum};
+  --text-secondary: rgba(243, 244, 246, 0.68);
+  --text-on-light: #{v.$color-ink};
+  --accent: #{v.$color-accent};
+  --accent-contrast: #{v.$color-white};
+  --accent-soft: rgba(217, 119, 6, 0.14);
+  --surface-light: #{v.$color-platinum};
+  --border: rgba(243, 244, 246, 0.1);
+  --border-strong: rgba(243, 244, 246, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: v.$font-sans;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100dvh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}

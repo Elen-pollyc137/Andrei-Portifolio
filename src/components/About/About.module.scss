@@ -1,0 +1,74 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+
+.section {
+  @include m.section-padding;
+}
+
+.inner {
+  @include m.container;
+}
+
+.grid {
+  display: grid;
+  gap: 2.5rem;
+
+  @include m.respond(lg) {
+    grid-template-columns: 1.3fr 1fr;
+    align-items: start;
+  }
+}
+
+.bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: v.$radius-md;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.bulletIcon {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  color: var(--accent);
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.objectiveCard {
+  @include m.card;
+  padding: 1.75rem;
+  border-color: var(--accent);
+  background: linear-gradient(160deg, var(--accent-soft), var(--bg-elevated) 60%);
+
+  p {
+    margin-top: 0.75rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+}
+
+.cardEyebrow {
+  @include m.eyebrow;
+}
+
+.note {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}

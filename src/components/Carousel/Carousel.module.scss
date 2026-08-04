@@ -1,0 +1,60 @@
+@use "../../styles/variables" as v;
+
+.carousel {
+  position: relative;
+}
+
+.viewport {
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  gap: 1rem;
+}
+
+.item {
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+.control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: rgba(17, 24, 39, 0.65);
+  color: var(--text-primary);
+  backdrop-filter: blur(6px);
+  transition:
+    border-color v.$transition-base,
+    background v.$transition-base,
+    opacity v.$transition-base;
+
+  &:hover:not(:disabled) {
+    border-color: var(--accent);
+    background: rgba(17, 24, 39, 0.85);
+  }
+
+  &:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+}
+
+.prev {
+  left: 12px;
+}
+
+.next {
+  right: 12px;
+}
+
+.prevIcon {
+  transform: rotate(180deg);
+}

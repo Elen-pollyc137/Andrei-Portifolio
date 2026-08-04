@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1c1c1c"/>
+      <stop offset="1" stop-color="#0c0c0c"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+
+  <!-- drawn arc / circle traced by the compass -->
+  <path d="M 14 46 A 18 18 0 0 0 50 46" fill="none" stroke="#D9770E"
+        stroke-width="2" stroke-linecap="round" stroke-dasharray="1 4.2"/>
+
+  <!-- compass hinge crossbar -->
+  <line x1="26.3" y1="27" x2="37.7" y2="27" stroke="#F2F2F0" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- left leg: needle point -->
+  <line x1="32" y1="14" x2="16" y2="49" stroke="#F2F2F0" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="16" cy="50.5" r="1.6" fill="#F2F2F0"/>
+
+  <!-- right leg: pencil -->
+  <line x1="32" y1="14" x2="48" y2="49" stroke="#F2F2F0" stroke-width="4" stroke-linecap="round"/>
+  <rect x="45.3" y="47" width="5.4" height="6" rx="1" fill="#D9770E" transform="rotate(18 48 50)"/>
+
+  <!-- pivot -->
+  <circle cx="32" cy="14" r="4.6" fill="#0c0c0c" stroke="#D9770E" stroke-width="2.4"/>
+</svg>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import styles from "./Header.module.scss";
 
 const NAV_LINKS = [
@@ -18,7 +19,14 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.bar}>
         <a href="#topo" className={styles.brand}>
-          <span className={styles.brandMark}>ADO</span>
+          <Image
+            src="/logo.svg"
+            alt="Andrei Durães Oliveira"
+            width={38}
+            height={38}
+            className={styles.brandMark}
+            priority
+          />
           <span className={styles.brandName}>Andrei Durães Oliveira</span>
         </a>
 

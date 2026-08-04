@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: "Andrei Durães Oliveira | Engenheiro Civil & Gestor de Contratos",
   description:
     "Engenheiro Civil com mais de 30 anos de experiência em obras industriais, prediais e infraestrutura pesada. Gestão de contratos, engenharia de valor e planejamento de grandes obras.",
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
